@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+       <template id="assets_backend_0" name="systray_new_icon" inherit_id="web.assets_backend">
+           <xpath expr=".">
+               <script type="text/javascript" src="/test_p/static/src/js/lead_icon.js"/>
+           </xpath>
+       </template>
+   </data>
+
+    <!--  type of context : Opportunity / Lead    -->
+
+    <record model="ir.ui.view" id="mail_activity_view_form_popup_herit">
+            <field name="name">mail.activity.view.form.popup.inherit</field>
+            <field name="model">mail.activity</field>
+            <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <field name="activity_type_id" position="after">
+                    <field name="type" string = "Type"/>
+                </field>
+            </field>
+    </record>
+</odoo>
