@@ -13,6 +13,10 @@
     'depends': ['crm'],
     'data': [
         'views/crm_lead_icon_view.xml',
+        'wizard/cre_lead_view.xml',
+        'wizard/plan_action_view.xml',
+        'views/leads_template.xml',
+
     ],
 'qweb': [
         'static/src/xml/lead_icon.xml',

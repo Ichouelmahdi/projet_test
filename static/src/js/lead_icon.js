@@ -126,7 +126,7 @@ var ActivityMenu = Widget.extend({
             res_model:  data.res_model,
             views: [[false, 'kanban'], [false, 'form']],
             search_view_id: [false],
-            domain: [['activity_user_id', '=', session.uid]],
+            domain: [['activity_user_id', '=', session.uid],['type', '=', 'lead']],
             context:context,
         });
     },

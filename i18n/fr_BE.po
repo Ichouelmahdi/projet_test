@@ -1,0 +1,334 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* test_p
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20200729\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-09 00:15+0000\n"
+"PO-Revision-Date: 2020-08-09 00:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:49
+#, python-format
+msgid "0 Future"
+msgstr "0 Future"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:45
+#, python-format
+msgid "0 Late"
+msgstr "0 En retard"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:47
+#, python-format
+msgid "0 Today"
+msgstr "0 Aujourd’hui"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:24
+#: model:ir.model,name:test_p.model_mail_activity
+#: model:ir.model.fields,field_description:test_p.field_define_action__activity_id
+#: model:ir.model.fields,field_description:test_p.field_define_action__activity_type_id
+#, python-format
+msgid "Activity"
+msgstr "Activité"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_define_action__user_id
+msgid "Assigned to"
+msgstr "Assigné à"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_partner_form_inherit
+msgid "CRM Qualifications"
+msgstr "CRM Qualifications"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
+#: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: test_p
+#: model:ir.model.fields,help:test_p.field_create_crm_lead__tag_ids
+msgid "Classify and analyze your lead/opportunity categories like: Training, Service"
+msgstr "Classe et analyse vos catégories de piste/opportunités. Exemples : Formation, Service"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.crm_case_tree_view_leads_inherit
+msgid "Company Name"
+msgstr "Nom de la société"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
+msgid "Create"
+msgstr "Créer"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.crm_case_form_view_oppors_inherit0
+msgid "Create a new lead"
+msgstr "Créer une nouvelle piste"
+
+#. module: test_p
+#: model:ir.actions.act_window,name:test_p.action_create_lead
+msgid "Create a lead"
+msgstr "Créer une piste"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
+msgid "Create leads"
+msgstr "Créer des pistes"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__create_uid
+#: model:ir.model.fields,field_description:test_p.field_define_action__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__create_date
+#: model:ir.model.fields,field_description:test_p.field_define_action__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__partner_id
+#: model:ir.model.fields,field_description:test_p.field_crm_lead__partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_crm_lead__date_next_action
+msgid "Date next action"
+msgstr "Date de la prochaine action"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.crm_case_tree_view_leads_inherit
+msgid "Date of next action"
+msgstr "Date de la prochaine action"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_define_new_action
+msgid "Define Action"
+msgstr "Définir une action"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0_inherit0
+msgid "Define next action"
+msgstr "Définir la prochaine action"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
+msgid "Describe the lead..."
+msgstr "Décrivez la piste..."
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__display_name
+#: model:ir.model.fields,field_description:test_p.field_define_action__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_define_action__date_deadline
+msgid "Due Date"
+msgstr "Date d'échéance"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:48
+#, python-format
+msgid "Future"
+msgstr "Future"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__id
+#: model:ir.model.fields,field_description:test_p.field_define_action__id
+msgid "ID"
+msgstr "ID"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead____last_update
+#: model:ir.model.fields,field_description:test_p.field_define_action____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__write_uid
+#: model:ir.model.fields,field_description:test_p.field_define_action__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__write_date
+#: model:ir.model.fields,field_description:test_p.field_define_action__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:44
+#, python-format
+msgid "Late"
+msgstr "En retard"
+
+#. module: test_p
+#: selection:define.action,type:0
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__lead_id
+#: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
+#: model_terms:ir.ui.view,arch_db:test_p.view_partner_form_inherit
+#: selection:mail.activity,type:0
+msgid "Lead"
+msgstr "Piste"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_res_partner__lead_ids
+#: model:ir.model.fields,field_description:test_p.field_res_users__lead_ids
+msgid "Leads in progress"
+msgstr "Pistes en cours"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_partner_form_inherit
+msgid "Lines of current leads"
+msgstr "lignes des pistes en cours"
+
+#. module: test_p
+#: model:ir.model.fields,help:test_p.field_crm_lead__partner_id
+msgid "Linked partner (optional). Usually created when converting the lead. You can find a partner by its Name, TIN, Email or Internal Reference."
+msgstr "Partenaire lié (optionnel). Généralement créé en convertisant la piste. Vous pouvez trouver un partenaire par son Nom, TIN, courriel ou Référence Interne."
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
+msgid "Log a note..."
+msgstr "Enregistrer une note"
+
+#. module: test_p
+#: code:addons/test_p/wizard/crm_create_lead.py:40
+#, python-format
+msgid "New lead"
+msgstr "Nouvelle piste"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:18
+#, python-format
+msgid "No actions planned."
+msgstr "Pas d'activités prévues"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_define_action__note
+msgid "Note"
+msgstr "Note"
+
+#. module: test_p
+#: selection:define.action,type:0
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__name
+#: selection:mail.activity,type:0
+msgid "Opportunity"
+msgstr "Opportunité"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:6
+#: code:addons/test_p/static/src/xml/lead_icon.xml:7
+#, python-format
+msgid "Leads"
+msgstr "Pistes"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
+msgid "Plan"
+msgstr "planifier"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
+msgid "Plan action"
+msgstr "planifier une action"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__user_id
+msgid "Salesperson"
+msgstr "Vendeur"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_define_action__summary
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_create_crm_lead__tag_ids
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:46
+#, python-format
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: test_p
+#: model:ir.model.fields,field_description:test_p.field_define_action__type
+#: model:ir.model.fields,field_description:test_p.field_mail_activity__type
+#: model_terms:ir.ui.view,arch_db:test_p.mail_activity_view_form_popup_inherit
+msgid "Type"
+msgstr "Type"
+
+#. module: test_p
+#: model:ir.model.fields,help:test_p.field_define_action__type
+#: model:ir.model.fields,help:test_p.field_mail_activity__type
+msgid "Type is used to separate Leads and Opportunities"
+msgstr "Le type est utilisé pour différencier les pistes des opportunités"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_define_action
+msgid "define.action"
+msgstr "Définir une action"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
+msgid "e.g. Discuss proposal"
+msgstr "Ex. : Proposition d'examen"
+
+#. module: test_p
+#: model:ir.model,name:test_p.model_create_crm_lead
+msgid "lead creation"
+msgstr ""
+
+#. module: test_p
+#: model:ir.actions.act_window,name:test_p.action_plan_activity
+msgid "plan.action"
+msgstr "Planifier une action"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.crm_case_tree_view_leads_inherit
+msgid "saleperson"
+msgstr "Vendeur"
+

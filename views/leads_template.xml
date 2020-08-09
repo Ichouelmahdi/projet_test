@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="overdue_leads_page" name="Overdue leads">
+        <t t-call="website.layout">
+            <div class="container">
+                Leads: Overdue tasks
+                <table class="table table-sm">
+                    <thead class= "thead-light">
+                        <tr>
+                             <th name="overdue_lead" class="text-center">Lead</th>
+                             <th name="lead_date" class="text-center">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="leads" t-as="lead">
+                            <tr>
+                                <td>
+                                     <t t-esc="lead.name"/>
+                                </td>
+                                <td>
+                                     <t t-esc="lead.create_date"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
