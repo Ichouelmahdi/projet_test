@@ -47,7 +47,7 @@
             <field name="priority" eval="20"/>
             <field name="arch" type="xml">
                 <xpath expr="//header/button[@name='toggle_active']" position="after">
-                        <button name="%(test_p.action_create_lead)d" string="Create a new lead" attrs="{'invisible': ['|', ('active','=',False), ('probability', '>=', 40)]}" class="oe_highlight" type="action" groups = "crm.group_use_lead"/>
+                        <button name="%(test_p.action_create_lead)d" string="Create a new lead" class="oe_highlight" type="action" groups = "crm.group_use_lead"/>
                 </xpath>
             </field>
     </record>

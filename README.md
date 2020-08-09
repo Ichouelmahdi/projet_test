@@ -1,2 +1,3 @@
 # projet_test
-Test
+Odoo – test techique
+Module CRM Qualifications

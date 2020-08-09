@@ -12,8 +12,8 @@
     'website': '',
     'depends': ['crm'],
     'data': [
-        'views/crm_lead_icon_view.xml',
-        'wizard/cre_lead_view.xml',
+        'views/leads_views.xml',
+        'wizard/create_lead_view.xml',
         'wizard/plan_action_view.xml',
         'views/leads_template.xml',
 

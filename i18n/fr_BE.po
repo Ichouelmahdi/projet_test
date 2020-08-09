@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0-20200729\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 00:15+0000\n"
-"PO-Revision-Date: 2020-08-09 00:15+0000\n"
+"POT-Creation-Date: 2020-08-09 17:44+0000\n"
+"PO-Revision-Date: 2020-08-09 17:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: code:addons/test_p/static/src/xml/lead_icon.xml:49
 #, python-format
 msgid "0 Future"
-msgstr "0 Future"
+msgstr "0 Futur"
 
 #. module: test_p
 #. openerp-web
@@ -34,13 +34,13 @@ msgstr "0 En retard"
 #: code:addons/test_p/static/src/xml/lead_icon.xml:47
 #, python-format
 msgid "0 Today"
-msgstr "0 Aujourd’hui"
+msgstr "0 Aujourd'hui"
 
 #. module: test_p
 #. openerp-web
 #: code:addons/test_p/static/src/xml/lead_icon.xml:24
 #: model:ir.model,name:test_p.model_mail_activity
-#: model:ir.model.fields,field_description:test_p.field_define_action__activity_id
+#: model:ir.model.fields,field_description:test_p.field_define_action__activity_ids
 #: model:ir.model.fields,field_description:test_p.field_define_action__activity_type_id
 #, python-format
 msgid "Activity"
@@ -89,7 +89,8 @@ msgstr "Créer une nouvelle piste"
 
 #. module: test_p
 #: model:ir.actions.act_window,name:test_p.action_create_lead
-msgid "Create a lead"
+#: model:ir.model,name:test_p.model_create_crm_lead
+msgid "Create lead"
 msgstr "Créer une piste"
 
 #. module: test_p
@@ -114,6 +115,11 @@ msgstr "Créé le"
 #: model:ir.model.fields,field_description:test_p.field_crm_lead__partner_id
 msgid "Customer"
 msgstr "Client"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.overdue_leads_page
+msgid "Date"
+msgstr "Date "
 
 #. module: test_p
 #: model:ir.model.fields,field_description:test_p.field_crm_lead__date_next_action
@@ -156,13 +162,13 @@ msgstr "Date d'échéance"
 #: code:addons/test_p/static/src/xml/lead_icon.xml:48
 #, python-format
 msgid "Future"
-msgstr "Future"
+msgstr "Futur"
 
 #. module: test_p
 #: model:ir.model.fields,field_description:test_p.field_create_crm_lead__id
 #: model:ir.model.fields,field_description:test_p.field_define_action__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: test_p
 #: model:ir.model.fields,field_description:test_p.field_create_crm_lead____last_update
@@ -192,6 +198,7 @@ msgstr "En retard"
 #. module: test_p
 #: selection:define.action,type:0
 #: model:ir.model.fields,field_description:test_p.field_create_crm_lead__lead_id
+#: model_terms:ir.ui.view,arch_db:test_p.overdue_leads_page
 #: model_terms:ir.ui.view,arch_db:test_p.view_create_lead_form0
 #: model_terms:ir.ui.view,arch_db:test_p.view_partner_form_inherit
 #: selection:mail.activity,type:0
@@ -204,10 +211,22 @@ msgid "Lead/Opportunity"
 msgstr "Piste/opportunité"
 
 #. module: test_p
+#. openerp-web
+#: code:addons/test_p/static/src/xml/lead_icon.xml:7
+#, python-format
+msgid "Leads"
+msgstr "Pistes"
+
+#. module: test_p
 #: model:ir.model.fields,field_description:test_p.field_res_partner__lead_ids
 #: model:ir.model.fields,field_description:test_p.field_res_users__lead_ids
 msgid "Leads in progress"
 msgstr "Pistes en cours"
+
+#. module: test_p
+#: model_terms:ir.ui.view,arch_db:test_p.overdue_leads_page
+msgid "Leads: Overdue tasks"
+msgstr "Pistes: tâches en retard"
 
 #. module: test_p
 #: model_terms:ir.ui.view,arch_db:test_p.view_partner_form_inherit
@@ -225,7 +244,7 @@ msgid "Log a note..."
 msgstr "Enregistrer une note"
 
 #. module: test_p
-#: code:addons/test_p/wizard/crm_create_lead.py:40
+#: code:addons/test_p/wizard/wizard_models.py:37
 #, python-format
 msgid "New lead"
 msgstr "Nouvelle piste"
@@ -252,10 +271,9 @@ msgstr "Opportunité"
 #. module: test_p
 #. openerp-web
 #: code:addons/test_p/static/src/xml/lead_icon.xml:6
-#: code:addons/test_p/static/src/xml/lead_icon.xml:7
 #, python-format
-msgid "Leads"
-msgstr "Pistes"
+msgid "Pistes"
+msgstr ""
 
 #. module: test_p
 #: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
@@ -316,11 +334,6 @@ msgstr "Définir une action"
 #: model_terms:ir.ui.view,arch_db:test_p.view_plan_action_form
 msgid "e.g. Discuss proposal"
 msgstr "Ex. : Proposition d'examen"
-
-#. module: test_p
-#: model:ir.model,name:test_p.model_create_crm_lead
-msgid "lead creation"
-msgstr ""
 
 #. module: test_p
 #: model:ir.actions.act_window,name:test_p.action_plan_activity

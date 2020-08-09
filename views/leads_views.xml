@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+<!--    New icon template-->
    <data>
        <template id="assets_backend_0" name="systray_new_icon" inherit_id="web.assets_backend">
            <xpath expr=".">
@@ -8,7 +10,7 @@
        </template>
    </data>
 
-<!--      type of activity : Opportunity / Lead  -->
+<!--      type of activity : Opportunity / Lead    -->
 
     <record model="ir.ui.view" id="mail_activity_view_form_popup_inherit">
             <field name="name">mail.activity.view.form.popup.inherit</field>
@@ -29,9 +31,8 @@
             <field name="name">res.partner.form.inherit</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="priority" eval="20"/>
             <field name="arch" type="xml">
-                <xpath expr="//page[@name='sales_purchases']" position="after">
+                <xpath expr="//page[@name='accounting_disabled']" position="after">
                     <page string="CRM Qualifications" name="crm_partner_lead ">
                     <field name="lead_ids" string = "CRM Qualifications"  mode="tree">
                          <tree string="Lines of current leads"  >
@@ -60,13 +61,13 @@
             </field>
 
     </record>
-<!--Edits to resume leads list-->
+
+<!--Edits to summarize leads list-->
 
     <record model="ir.ui.view" id="crm_case_tree_view_leads_inherit">
             <field name="name">crm.lead.tree.inherit0</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
-            <field name="priority" eval="20"/>
             <field name="arch" type="xml">
                 <field name="name" position="after">
                     <field name="date_next_action" string = "Date of next action"/>

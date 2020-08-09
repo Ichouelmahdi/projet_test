@@ -44,7 +44,7 @@ class Users(models.Model):
         return list(user_activities.values())
 
 
-class MailActivity(models.Model):
+class Activity(models.Model):
     _inherit = 'mail.activity'
     _description = 'Activity'
 

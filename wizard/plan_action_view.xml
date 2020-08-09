@@ -43,7 +43,6 @@
             <field name="name">create.crm.lead.inherit0</field>
             <field name="model">create.crm.lead</field>
             <field name="inherit_id" ref="test_p.view_create_lead_form0"/>
-            <field name="priority" eval="20"/>
             <field name="arch" type="xml">
                 <sheet position="before">
                     <header>

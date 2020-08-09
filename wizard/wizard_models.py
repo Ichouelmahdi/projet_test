@@ -5,7 +5,7 @@ from odoo import api, fields, models, _
 
 class CreateLead(models.TransientModel):
     _name = "create.crm.lead"
-    _description = "Creat lead"
+    _description = "Create lead"
 
     @api.model
     def default_get(self, fields):
@@ -14,7 +14,6 @@ class CreateLead(models.TransientModel):
         if lead_id:
             result['lead_id'] = lead_id
         return result
-
     name = fields.Char('Opportunity', required=True, index=True)
     partner_id = fields.Many2one('res.partner', string='Customer', index=True)
     tag_ids = fields.Many2many('crm.lead.tag', string='Tags',
@@ -27,14 +26,12 @@ class CreateLead(models.TransientModel):
     def action_copy_lead(self):
         wizards = self.browse(self._ids)
         for wizard in wizards:
-            if wizard.lead_id and wizard.lead_id.partner_id:
-                wizard.state = 'create_lead'
-                lead_id = wizard.lead_id.copy()
-                lead_id.name = wizard.name
-                lead_id.user_id = wizard.user_id
-                lead_id.partner_id = wizard.partner_id
-                lead_id.type = 'lead'
-                lead_id.tag_ids = wizard.tag_ids
+            lead_id = wizard.lead_id.copy()
+            lead_id.name = wizard.name
+            lead_id.user_id = wizard.user_id
+            lead_id.partner_id = wizard.partner_id
+            lead_id.type = 'lead'
+            lead_id.tag_ids = wizard.tag_ids
 
         return {
            'name': _('New lead'),
@@ -49,14 +46,7 @@ class CreateLead(models.TransientModel):
 class DefineAction(models.TransientModel):
     _name = "define.action"
 
-    @api.model
-    def default_get(self, fields):
-        result = super(DefineAction, self).default_get(fields)
-        activity_id = self.env.context.get('active_id')
-        if activity_id:
-            result['activity_id'] = activity_id
-        return result
-    activity_id = fields.Many2one('mail.activity', string='Activity')
+    activity_ids = fields.Many2one('mail.activity', string='Activity')
     activity_type_id = fields.Many2one('mail.activity.type', 'Activity')
     summary = fields.Char('Summary')
     note = fields.Html('Note', sanitize_style=True)
@@ -71,11 +61,11 @@ class DefineAction(models.TransientModel):
     def action_copy_activity(self):
         wizards = self.browse(self._ids)
         for wizard in wizards:
-            if wizard.activity_id:
-                activity_id = wizard.activity_id.copy()
-                activity_id.activity_type_id = wizard.activity_type_id
-                activity_id.summary = wizard.summary
-                activity_id.type = wizard.type
-                activity_id.date_deadline = wizard.date_deadline
-                activity_id.user_id = wizard.user_id
-                activity_id.note = wizard.note
+            if wizard.activity_ids:
+                activity_ids = wizard.activity_ids.copy()
+                activity_ids.activity_type_id = wizard.activity_type_id
+                activity_ids.summary = wizard.summary
+                activity_ids.type = wizard.type
+                activity_ids.date_deadline = wizard.date_deadline
+                activity_ids.user_id = wizard.user_id
+                activity_ids.note = wizard.note
