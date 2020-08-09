@@ -8,7 +8,7 @@
        </template>
    </data>
 
-<!--      type of activity : Opportunity / Lead    -->
+<!--      type of activity : Opportunity / Lead  -->
 
     <record model="ir.ui.view" id="mail_activity_view_form_popup_inherit">
             <field name="name">mail.activity.view.form.popup.inherit</field>
