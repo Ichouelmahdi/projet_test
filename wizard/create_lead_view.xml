@@ -15,10 +15,13 @@
                             <h1><field name="name" placeholder="Describe the lead..."/></h1>
                         </div>
                        <group>
-                           <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
-                           <field name="user_id"/>
+
                        </group>
 
+                    </group>
+                    <group>
+                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                        <field name="user_id"/>
                     </group>
 
                     <footer>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0-20200729\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 17:44+0000\n"
-"PO-Revision-Date: 2020-08-09 17:44+0000\n"
+"POT-Creation-Date: 2020-08-09 21:34+0000\n"
+"PO-Revision-Date: 2020-08-09 21:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -113,6 +113,7 @@ msgstr "Créé le"
 #. module: test_p
 #: model:ir.model.fields,field_description:test_p.field_create_crm_lead__partner_id
 #: model:ir.model.fields,field_description:test_p.field_crm_lead__partner_id
+#: model_terms:ir.ui.view,arch_db:test_p.crm_case_form_view_leads_inherit
 msgid "Customer"
 msgstr "Client"
 
@@ -128,8 +129,8 @@ msgstr "Date de la prochaine action"
 
 #. module: test_p
 #: model_terms:ir.ui.view,arch_db:test_p.crm_case_tree_view_leads_inherit
-msgid "Date of next action"
-msgstr "Date de la prochaine action"
+msgid "Date overdue action"
+msgstr "Date action en retard"
 
 #. module: test_p
 #: model:ir.model,name:test_p.model_define_new_action
