@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'test_Darbtech',
+    'name': 'CRM Qualifications',
     'version': '1.0',
     'sequence': 170,
     'category': 'Extra tools',
@@ -14,7 +14,6 @@
     'data': [
         'views/leads_views.xml',
         'wizard/create_lead_view.xml',
-        'wizard/plan_action_view.xml',
         'views/leads_template.xml',
 
     ],

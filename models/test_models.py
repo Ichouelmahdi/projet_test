@@ -9,17 +9,16 @@ class Users(models.Model):
 
     @api.model
     def systray_get_lead(self):
-        query = """SELECT m.id, count(*), act.res_model as model,
+        query = """SELECT count(*), act.res_model as model, act.res_id, c.id,
                             CASE
                                 WHEN %(today)s::date - act.date_deadline::date = 0 Then 'today'
                                 WHEN %(today)s::date - act.date_deadline::date > 0 Then 'overdue'
                                 WHEN %(today)s::date - act.date_deadline::date < 0 Then 'planned'
                             END AS states
-                        FROM mail_activity AS act 
-                        JOIN ir_model AS m ON act.res_model_id = m.id
-                        WHERE user_id = %(user_id)s 
-                        AND NOT EXISTS (SELECT * FROM res_users WHERE type = 'opportunity')
-                        GROUP BY m.id, states, act.res_model;
+                        FROM mail_activity AS act
+                        JOIN crm_lead AS c ON act.res_id = c.id
+                        WHERE c.type = 'lead' 
+                        GROUP BY act.res_id, states,c.id, act.res_model;
                         """
 
         self.env.cr.execute(query, {
@@ -33,6 +32,7 @@ class Users(models.Model):
                 user_activities[activity['model']] = {
                     'name': 'CRM Qualifications',
                     'model': activity['model'],
+                    'domain': [('type', '=', 'lead')],
                     'type': 'activity',
                     'icon': modules.module.get_module_icon(self.env[activity['model']]._original_module),
                     'total_count': 0, 'today_count': 0, 'overdue_count': 0, 'planned_count': 0,
@@ -42,15 +42,6 @@ class Users(models.Model):
                 user_activities[activity['model']]['total_count'] += activity['count']
 
         return list(user_activities.values())
-
-
-class Activity(models.Model):
-    _inherit = 'mail.activity'
-    _description = 'Activity'
-
-    type = fields.Selection([('lead', 'Lead'), ('opportunity', 'Opportunity')], index=True, required=True,
-                            default=lambda self: 'lead' if self.env['res.users'].has_group('crm.group_use_lead')
-                            else 'opportunity', help="Type is used to separate Leads and Opportunities")
 
 
 class Partner(models.Model):
@@ -65,6 +56,8 @@ class Lead(models.Model):
 
     partner_id = fields.Many2one('res.partner')
     date_next_action = fields.Date('Date next action', compute="_compute_date_next_action")
+    act_ids = fields.One2many('mail.activity', 'res_id', string='Activities',
+                              auto_join=True, readonly=True, domain=lambda self: [('res_model', '=', self._name)])
 
     @api.depends()
     def _compute_date_next_action(self):

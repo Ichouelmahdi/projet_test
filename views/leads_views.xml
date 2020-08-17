@@ -23,19 +23,6 @@
             </field>
     </record>
 
-<!--      type of activity : Opportunity / Lead    -->
-
-    <record model="ir.ui.view" id="mail_activity_view_form_popup_inherit">
-            <field name="name">mail.activity.view.form.popup.inherit</field>
-            <field name="model">mail.activity</field>
-            <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
-            <field name="priority" eval="20"/>
-            <field name="arch" type="xml">
-                <field name="activity_type_id" position="after">
-                    <field name="type" string = "Type"/>
-                </field>
-            </field>
-    </record>
 
 
 <!--list of current leads of customer-->
@@ -45,10 +32,10 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page[@name='accounting_disabled']" position="after">
+                <xpath expr="//page[@name='sales_purchases']" position="after">
                     <page string="CRM Qualifications" name="crm_partner_lead ">
                     <field name="lead_ids" string = "CRM Qualifications"  mode="tree">
-                         <tree string="Lines of current leads"  >
+                         <tree string="List of current leads"  >
                              <field name="date_deadline" invisible="1"/>
                              <field name="create_date"/>
                              <field name="name" string="Lead"/>
@@ -75,7 +62,7 @@
 
     </record>
 
-<!--Edits to summarize leads list-->
+<!--Edits on leads list-> New column : Date of next overdue action-->
 
     <record model="ir.ui.view" id="crm_case_tree_view_leads_inherit">
             <field name="name">crm.lead.tree.inherit0</field>
@@ -101,6 +88,31 @@
                     <field name="user_id" string = "saleperson"/>
                 </field>
             </field>
+    </record>
+
+<!--list of actions for each lead-->
+
+    <record model="ir.ui.view" id="crm_case_form_view_leads_inherit0">
+            <field name="name">crm.lead.form.lead.inherit0</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='extra']" position="before">
+                    <page string="Actions" name="lead_actions ">
+                         <field name="act_ids" string = "Actions"  mode="tree">
+                            <tree string="List of current actions" decoration-danger="state =='overdue'" decoration-warning="state =='today'">
+                                <field name="res_name" invisible="1"/>
+                                <field name="activity_type_id" />
+                                <field name="date_deadline"/>
+                                <field name="user_id"/>
+                                <field name="summary"/>
+                                <field name="state" invisible="1"/>
+                            </tree>
+                         </field>
+                    </page>
+                </xpath>
+            </field>
+
     </record>
 
 

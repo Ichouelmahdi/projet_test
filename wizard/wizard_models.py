@@ -1,11 +1,20 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from odoo import api, fields, models, _
+from odoo.tools.misc import clean_context
+
+AVAILABLE_PRIORITIES = [
+    ('0', 'Low'),
+    ('1', 'Medium'),
+    ('2', 'High'),
+    ('3', 'Very High'),
+]
 
 
 class CreateLead(models.TransientModel):
     _name = "create.crm.lead"
     _description = "Create lead"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     @api.model
     def default_get(self, fields):
@@ -19,53 +28,34 @@ class CreateLead(models.TransientModel):
     tag_ids = fields.Many2many('crm.lead.tag', string='Tags',
                                help="Classify and analyze your lead/opportunity categories like: Training, Service")
     lead_id = fields.Many2one('crm.lead', string='Lead',
-                              domain=[('type', '=', 'lead')], required=True, ondelete='cascade')
+                              required=True, ondelete='cascade', default=lambda self: self.default_get)
     user_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
+    priority = fields.Selection(AVAILABLE_PRIORITIES, string='Priority',
+                                index=True, default=AVAILABLE_PRIORITIES[0][0])
 
     @api.multi
-    def action_copy_lead(self):
+    def button_create_lead(self):
         wizards = self.browse(self._ids)
         for wizard in wizards:
             lead_id = wizard.lead_id.copy()
+            ctx = dict(
+                clean_context(self.env.context),
+                default_res_id=lead_id.id,
+                default_res_model='crm.lead',
+            )
             lead_id.name = wizard.name
             lead_id.user_id = wizard.user_id
             lead_id.partner_id = wizard.partner_id
             lead_id.type = 'lead'
             lead_id.tag_ids = wizard.tag_ids
+            lead_id.priority = wizard.priority
 
         return {
-           'name': _('New lead'),
-           'view_type': 'form',
-           'view_mode': 'form,tree',
-           'res_model': 'create.crm.lead',
-           'view_id': False,
-           'res_id': lead_id.id,
-           'type': 'ir.actions.act_window'}
-
-
-class DefineAction(models.TransientModel):
-    _name = "define.action"
-
-    activity_ids = fields.Many2one('mail.activity', string='Activity')
-    activity_type_id = fields.Many2one('mail.activity.type', 'Activity')
-    summary = fields.Char('Summary')
-    note = fields.Html('Note', sanitize_style=True)
-    date_deadline = fields.Date('Due Date', index=True, required=True, default=fields.Date.context_today)
-    user_id = fields.Many2one('res.users', 'Assigned to', default=lambda self: self.env.user, index=True, required=True)
-    type = fields.Selection([('lead', 'Lead'), ('opportunity', 'Opportunity')], index=True,
-                            required=True,
-                            default=lambda self: 'lead' if self.env['res.users'].has_group('crm.group_use_lead')
-                            else 'opportunity',  help="Type is used to separate Leads and Opportunities")
-
-    @api.multi
-    def action_copy_activity(self):
-        wizards = self.browse(self._ids)
-        for wizard in wizards:
-            if wizard.activity_ids:
-                activity_ids = wizard.activity_ids.copy()
-                activity_ids.activity_type_id = wizard.activity_type_id
-                activity_ids.summary = wizard.summary
-                activity_ids.type = wizard.type
-                activity_ids.date_deadline = wizard.date_deadline
-                activity_ids.user_id = wizard.user_id
-                activity_ids.note = wizard.note
+            'name': _('Schedule an Activity'),
+            'view_type': 'form',
+            'context': ctx,
+            'view_mode': 'form',
+            'res_model': 'mail.activity',
+            'views': [(False, 'form')],
+            'type': 'ir.actions.act_window',
+            'target': 'new'}
