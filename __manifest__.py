@@ -10,15 +10,17 @@
     'description': "",
     'author': 'El Mahdi ICHOU',
     'website': '',
-    'depends': ['crm'],
+    'depends': ['crm','website'],
     'data': [
         'views/leads_views.xml',
         'wizard/create_lead_view.xml',
         'views/leads_template.xml',
+        'report/o_lead_actions_report_templates.xml',
+        'report/o_lead_actions_report.xml',
 
     ],
-'qweb': [
-        'static/src/xml/lead_icon.xml',
+    'qweb': [
+         'static/src/xml/lead_icon.xml',
 
     ],
     'demo': [],

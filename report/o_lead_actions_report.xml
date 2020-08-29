@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="action_report_o_lead_actions"
+            string="List of leads"
+            model="crm.lead"
+            report_type="qweb-pdf"
+            file="test_p.report_o_lead_actions_document"
+            name="test_p.report_o_lead_actions_document"
+        />
+    </data>
+</odoo>

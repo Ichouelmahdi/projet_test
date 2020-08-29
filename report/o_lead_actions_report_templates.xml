@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_o_lead_actions_document">
+    <t t-call="web.external_layout">
+        <t t-call="web.html_container">
+        <div class="page">
+            <h2 class="text-center">
+                <strong>List of leads </strong>
+            </h2>
+            <p class="text-center">__________________________________________________________</p>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th name="th_lead_name" class="text-center">Lead</th>
+                        <th name="th_customer_name" class="text-center">Company name</th>
+                        <th name="th_Contact_name" class="text-center">Contact name</th>
+                        <th name="th_phone_name" class="text-center">Phone</th>
+                        <th name="th_name" class="text-center">Date next action</th>
+                        <th name="th_team_name" class="text-center">Sales team</th>
+                        <th name="th_user_name" class="text-center">Saleperson</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="docs" t-as="doc">
+                        <tr>
+                            <td name="td_unit" class="text-left"> <span t-field="doc.name"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.partner_name"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.contact_name"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.phone"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.date_next_action"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.team_id"/> </td>
+                            <td name="td_unit" class="text-right"> <span t-field="doc.user_id"/> </td>
+
+                        </tr>
+                    </t>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        </t>
+    </t>
+</template>
+
+
+
+</odoo>
