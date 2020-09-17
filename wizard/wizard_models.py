@@ -24,7 +24,7 @@ class CreateLead(models.TransientModel):
             result['lead_id'] = lead_id
         return result
     name = fields.Char('Opportunity', required=True, index=True)
-    partner_id = fields.Many2one('res.partner', string='Customer', index=True)
+    # partner_id = fields.Many2one('res.partner', string='Customer', index=True)
     tag_ids = fields.Many2many('crm.lead.tag', string='Tags',
                                help="Classify and analyze your lead/opportunity categories like: Training, Service")
     lead_id = fields.Many2one('crm.lead', string='Lead',
@@ -45,7 +45,7 @@ class CreateLead(models.TransientModel):
             )
             lead_id.name = wizard.name
             lead_id.user_id = wizard.user_id
-            lead_id.partner_id = wizard.partner_id
+            # lead_id.partner_id = wizard.partner_id
             lead_id.type = 'lead'
             lead_id.tag_ids = wizard.tag_ids
             lead_id.priority = wizard.priority

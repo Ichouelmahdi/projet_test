@@ -60,7 +60,7 @@ class Lead(models.Model):
 
     @api.depends()
     def _compute_date_next_action(self):
-        leads = self.search([('type', '=', 'lead'), ('user_id', '=', self._uid)])
+        leads = self.search([('type', '=', 'lead')])
         today = fields.Date.from_string(fields.Date.context_today(self))
         for lead in leads:
             list_date_action = []
